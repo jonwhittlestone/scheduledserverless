@@ -1,0 +1,7 @@
+version: "3"
+services:
+  web:
+    image: scheduled-serverless-startup/app
+    build: .
+    ports:
+      - "80:8080"
