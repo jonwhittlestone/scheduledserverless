@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ubuntu/bionic64"
   config.vm.hostname = "1804-server"
+  
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -80,5 +81,6 @@ Vagrant.configure("2") do |config|
      systemctl enable ssh
      systemctl start ssh
      systemctl status ssh
+     echo "sudo su -" >> .bashrc
   SHELL
 end
