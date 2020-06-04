@@ -9,7 +9,7 @@ cat > /etc/systemd/system/howapped.service<<-EOF
     Type=simple
     User=root
     WorkingDirectory=/root/scheduled-serverless-startup
-    ExecStart=sh start-containers.sh
+    ExecStart=sh /root/scheduled-serverless-startup/start-containers.sh
     Restart=on-abort
 
     [Install]
