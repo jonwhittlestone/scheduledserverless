@@ -82,15 +82,9 @@ Vagrant.configure("2") do |config|
      systemctl start ssh
      systemctl status ssh
      echo "sudo su -" >> .bashrc
-     touch run.sh
-     cat > run.sh <<-EOF
-      #!/bin/bash
-      git clone https://github.com/jonwhittlestone/scheduled-serverless-startup.git /root/scheduled-serverless-startup
-EOF
-     chmod +x run.sh
-     sh run.sh
-     sh /root/scheduled-serverless-startup/howapped-project-clone-and-start-containers.sh
-     #sh scheduled-serverless-startup/howapped-project-clone-and-start-containers.sh
+     git clone https://github.com/jonwhittlestone/scheduled-serverless-startup.git /root/scheduled-serverless-startup
+     sh /root/scheduled-serverless-startup/start-containers.sh
+     sh /root/scheduled-serverless-startup/create-service.sh
 
   SHELL
 end
