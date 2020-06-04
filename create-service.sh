@@ -16,4 +16,5 @@ cat > /etc/systemd/system/howapped.service<<-EOF
     WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
+systenctl enable howapped.service
 systemctl restart howapped.service
