@@ -68,7 +68,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
      apt-get update
      apt-get upgrade -y
-     apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+     apt-get install -y apt-transport-https ca-certificates curl software-properties-common git
      curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
      add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
      apt-get update
@@ -82,5 +82,16 @@ Vagrant.configure("2") do |config|
      systemctl start ssh
      systemctl status ssh
      echo "sudo su -" >> .bashrc
+     touch run.sh
+     cat > run.sh <<-EOF
+      #!/bin/bash
+      git clone https://github.com/jonwhittlestone/scheduled-serverless-startup.git /root/scheduled-serverless-startup
+      cd /root/scheduled-serverless-startup/app
+      docker-compose up -d
+EOF
+     chmod +x run.sh
+     sh run.sh
+     #sh scheduled-serverless-startup/howapped-project-clone-and-start-containers.sh
+
   SHELL
 end

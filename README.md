@@ -6,11 +6,15 @@ Companion repo for the blog post. Automation scripts to turn on and off a server
 ```
 $ vagrant up    # select '1' for network bridge
 $ vagrant ssh
-vagrant@1804-server:~$ cd /vagrant/app
-vagrant@1804-server:/vagrant/app$ sudo docker-compose up --build
-vagrant@1804-server:~$ curl localhost
+root@1804-server:~# docker ps
+CONTAINER ID        IMAGE                              COMMAND                  CREATED             STATUS              PORTS                  NAMES
+95216ad3ecbc        scheduled-serverless-startup/app   "docker-entrypoint.s…"   23 seconds ago      Up 21 seconds       0.0.0.0:80->8080/tcp   app_web_1
+root@1804-server:~# sudo localhost
+root@1804-server:~# curl localhost
 
 A Howapped Project.
+
+
 ```
 
 
