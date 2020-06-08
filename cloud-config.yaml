@@ -1,0 +1,13 @@
+#cloud-config
+
+write_files:
+  - path: /test.txt
+    content: |
+      Here is a line.
+      Another line is here.
+
+#cloud-config
+package_update: true
+
+#cloud-config
+package_upgrade: true

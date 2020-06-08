@@ -16,13 +16,3 @@ A Howapped Project.
 
 
 ```
-
-
-## Starting a service on boot in Ubuntu
-
-```
-sudo cp ~/vagrant/howapped-project-start-on-boot.service /etc/systemd/system/
-systemctl daemon-reload
-systemctl restart howapped-project-start-on-boot.service
-
-```
